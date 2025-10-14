@@ -17,20 +17,21 @@ Patient's symptoms: "{note}"
 Predicted risk label: {risk_label}
 Predicted risk score: {risk_score}%
 
-Provide a short and concise medical explanation, including possible causes, severity, and recommended actions.
+Provide a short and concise medical explanation, including possible causes, severity, and recommended actions in {language}.
 """
 
 chat_prompt = ChatPromptTemplate.from_template(prompt_template)
 
 
-def generate_descriptive_answer(note, risk_label, risk_score):
+def generate_descriptive_answer(note, risk_label, risk_score, language):
     """
     Generate descriptive explanation using LangChain + Gemini
     """
     prompt = chat_prompt.format(
         note=note,
         risk_label=risk_label,
-        risk_score=risk_score
+        risk_score=risk_score,  
+        language=language
     )
     response = llm.invoke(prompt)
     # If response is a dict, get the 'content' field
