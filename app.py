@@ -1,6 +1,6 @@
 import streamlit as st
-from model import load_models, predict_health_risk
-from llm import  generate_descriptive_answer
+from tools.model import load_models, predict_health_risk
+from utils.llm import  generate_descriptive_answer
 import os
 from dotenv import load_dotenv
 
