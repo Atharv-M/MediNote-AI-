@@ -82,9 +82,9 @@ def predict_health_risk(note: str, vectorizer, clf, reg):
 
     return risk_label, round(score_pred, 2)
 
-# =========================================================
-#  5. Run Training or Prediction (Optional Main Block)
-# =========================================================
+
+#   Run Training or Prediction (Optional Main Block)
+
 if __name__ == "__main__":
     # Load data
     df = load_data("doctor_notes.csv")
