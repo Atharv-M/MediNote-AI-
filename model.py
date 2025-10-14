@@ -57,18 +57,18 @@ def save_models(vectorizer, clf, reg):
     """ So this function will save the trained models in Pkl format and 
     can be loaded later for inference which will help in faster predictions.
     it stores all the vectors and models in the disk."""
-    joblib.dump(vectorizer, 'vectorizer.pkl')
-    joblib.dump(clf, 'classification_model.pkl')
-    joblib.dump(reg, 'regression_model.pkl')
+    joblib.dump(vectorizer, 'pklfiles/vectorizer.pkl')
+    joblib.dump(clf, 'pklfiles/classification_model.pkl')
+    joblib.dump(reg, 'pklfiles/regression_model.pkl')
 
     print("Models saved to disk.")
 
 def load_models():
     """ This function will load the trained models from the pkl files or disk and return them."""
-    vectorizer = joblib.load('vectorizer.pkl')
-    clf = joblib.load('classification_model.pkl')
-    reg = joblib.load('regression_model.pkl')
-    
+    vectorizer = joblib.load('pklfiles/vectorizer.pkl')
+    clf = joblib.load('pklfiles/classification_model.pkl')
+    reg = joblib.load('pklfiles/regression_model.pkl')
+
     return vectorizer, clf, reg
 
 # Prediciton Function 
